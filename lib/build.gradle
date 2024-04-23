@@ -35,15 +35,15 @@ dependencies {
 }
 
 gradlePlugin {
-    website = 'https://github.com/Ceymikey/websocketj'
-    vcsUrl = 'https://github.com/Ceymikey/websocketj'
+    website = 'https://github.com/Ceymikey/webutilsj'
+    vcsUrl = 'https://github.com/Ceymikey/webutilsj.git'
     plugins {
         websocketj {
-            id = 'dev.ceymikey.websocketj'
-            implementationClass = 'dev.ceymikey.websocketj.Library'
-            displayName = 'Websocketj'
-            description = 'Ping your favorite websites'
-            tags.set(['https', 'website', 'ping', 'java'])
+            id = 'dev.ceymikey.webutilsj'
+            implementationClass = 'dev.ceymikey.webutilsj.Library'
+            displayName = 'WebUtilsJ'
+            description = 'Websites utilities pack for Java'
+            tags.set(['https', 'website', 'utils', 'java'])
         }
     }
 }
