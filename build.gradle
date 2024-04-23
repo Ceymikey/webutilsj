@@ -39,7 +39,7 @@ gradlePlugin {
     vcsUrl = 'https://github.com/Ceymikey/webutilsj.git'
     plugins {
         websocketj {
-            id = 'dev.ceymikey.websocketj'
+            id = 'dev.ceymikey.webutilsj'
             implementationClass = 'dev.ceymikey.webutilsj.Library'
             displayName = 'WebUtilsJ'
             description = 'Websites utilities pack for Java'
