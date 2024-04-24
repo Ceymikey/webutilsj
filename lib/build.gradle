@@ -10,10 +10,11 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'com.gradle.plugin-publish' version '1.2.1'
+    id 'maven-publish'
 }
 
 group = 'dev.ceymikey'
-version = '1.0.1'
+version = '1.0.0'
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -32,6 +33,24 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation libs.guava
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "Webutilsj"
+            url = uri("https://maven.pkg.github.com/OWNER/REPOSITORY")
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+            }
+        }
+    }
+    publications {
+        register<MavenPublication>("gpr") {
+            from(components["java"])
+        }
+    }
 }
 
 gradlePlugin {
