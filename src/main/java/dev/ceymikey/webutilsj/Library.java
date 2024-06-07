@@ -3,6 +3,8 @@
  */
 package dev.ceymikey.webutilsj;
 
+import dev.ceymikey.webutilsj.utils.Jwu;
+
 import java.io.IOException;
 
 public class Library {
@@ -12,5 +14,12 @@ public class Library {
 
     public static void main(String[] args) throws IOException {
         Connector.connect("gradle.org");
+        try {
+            String url = "https://breezenodes.com/";
+            String responseData = Jwu.fetch(url);
+            System.out.println(responseData);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
